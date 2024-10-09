@@ -8,10 +8,9 @@ export function activate({subscriptions}: vscode.ExtensionContext) {
 	const foldStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
 	foldStatusBarItem.command = "editor.foldLevel1";
 	foldStatusBarItem.tooltip = "fold Level 1";
-	foldStatusBarItem.text = `{$(chevron-right)$(chevron-left)}`;
+	foldStatusBarItem.text = `{$(chevron-right)1$(chevron-left)}`;
 	subscriptions.push(foldStatusBarItem);
 	foldStatusBarItem.show();
-
 
 	const unfoldStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
 	unfoldStatusBarItem.command = "editor.unfoldAll";
@@ -19,6 +18,13 @@ export function activate({subscriptions}: vscode.ExtensionContext) {
 	unfoldStatusBarItem.text = `{$(chevron-left)$(chevron-right)}`;
 	subscriptions.push(unfoldStatusBarItem);
 	unfoldStatusBarItem.show();
+
+	const foldStatusBarItem2 = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 100);
+	foldStatusBarItem2.command = "editor.foldLevel2";
+	foldStatusBarItem2.tooltip = "fold Level 2";
+	foldStatusBarItem2.text = `{$(chevron-right)2$(chevron-left)}`;
+	subscriptions.push(foldStatusBarItem2);
+	foldStatusBarItem2.show();
 }
 
 // this method is called when your extension is deactivated
